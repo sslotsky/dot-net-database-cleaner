@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/sslotsky/dot-net-database-cleaner</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release allows recursive deletion for starting table and tables with foreign key constraints.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>testing database cleaner</tags>
+  </metadata>
+</package>
