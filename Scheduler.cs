@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 
 namespace DatabaseCleaner
@@ -6,12 +7,12 @@ namespace DatabaseCleaner
     public class Scheduler
     {
         private TableRegistry registry;
-        private string startingTableName;
+        private IEnumerable<string> tableNames;
         private Func<DbContext> contextResolver;
 
-        public Scheduler(string tableName, Func<DbContext> contextResolver)
+        public Scheduler(Func<DbContext> contextResolver, params string[] tableNames)
         {
-            this.startingTableName = tableName;
+            this.tableNames = tableNames;
             this.contextResolver = contextResolver;
             registry = new TableRegistry();
         }
@@ -20,7 +21,10 @@ namespace DatabaseCleaner
         {
             using (var context = this.contextResolver())
             {
-                this.Clean(context, startingTableName);
+                foreach(var tableName in this.tableNames)
+                {
+                    this.Clean(context, tableName);
+                }
                 context.SaveChanges();
             }
         }

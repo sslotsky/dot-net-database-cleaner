@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/sslotsky/dot-net-database-cleaner</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Initial release allows recursive deletion for starting table and tables with foreign key constraints.</releaseNotes>
+    <releaseNotes>Accept a list of table names, downgrade EF to 6.1.1</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>testing database cleaner</tags>
   </metadata>
