@@ -28,7 +28,7 @@ namespace Testing
         [TestInitialize]
         public virtual void Before()
         {
-            var scheduler = new Scheduler("Client", () => new MyDbContext("name=MyConnectionString"));
+            var scheduler = new Scheduler(() => new MyDbContext("name=MyConnectionString"), "Client");
             scheduler.Schedule();
         }
     }
